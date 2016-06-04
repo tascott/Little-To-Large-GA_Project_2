@@ -3,12 +3,12 @@
 
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %></td>
-    <td><%= user.first_name %></td>
-    <td><%= user.last_name %></td>
-    <td><%= user.profile_picture %></td>
-  </tr>
+  <ul>
+    <li><%= user.username %></li>
+    <li><%= user.first_name %></li>
+    <li><%= user.last_name %></li>
+    <li><%= user.profile_picture %></li>
+  </ul>
 <% end %>
 
 
