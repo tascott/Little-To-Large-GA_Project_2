@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Users1name:</strong>
+  <strong>Username:</strong>
   <%= @user.username %>
 </p>
 
@@ -28,12 +28,15 @@
 
 <% @user.events.each do |event| %>
   <ul>
+    <li><%= link_to 'Show', event %></li>
     <li><%= event.name %></li>
     <li><%= event.location %></li>
     <li><%= event.body %></li>
     <li><%= event.date %></li>
   </ul>
 <% end %>
+
+<li><%= link_to "New Event", new_event_path %></li>
 
 
 

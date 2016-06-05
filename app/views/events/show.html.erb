@@ -25,10 +25,24 @@
   <%= @event.date %>
 </p>
 
-<p>
+<!-- <p>
   <strong>User:</strong>
   <%= @event.user_id %>
-</p>
+</p> -->
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<h1>Comments</h1>
+
+<% @event.comments.each do |comment| %>
+  <h3><%= comment.name %></h3>
+  <ul>
+    <li><%= comment.body %></li>
+  </ul>
+<% end %>
+
+
+<%= link_to 'New Comment', new_comment_path %>
+
+
