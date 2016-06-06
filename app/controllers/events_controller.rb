@@ -9,6 +9,18 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @comment = Comment.new
+    # @event = Event.find(params[:id])
+
+    if @event.user == current_user 
+      render 'show'
+    else
+      redirect_to root_path
+    end
+
+    
+    @comment = Comment.new
+    @comment.event = @event
   end
 
   # GET /events/new
@@ -24,7 +36,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    @event.user = current_user
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
