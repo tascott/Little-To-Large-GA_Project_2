@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem 'foundation-rails'
+
 gem 'bootstrap-sass'
 gem 'rails', '4.2.6'
 

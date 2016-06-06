@@ -1,0 +1,17 @@
+{
+  "name": "WDI_Project_2",
+  "homepage": "https://github.com/tascott/WDI_Project_2",
+  "authors": [
+    "Tom Scott <tom.a.scott@hotmail.co.uk>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
