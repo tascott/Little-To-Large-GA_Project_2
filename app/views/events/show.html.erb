@@ -1,34 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div id="events_container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<%= render partial: "layouts/header" %>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
+  <h3>
+    <%= @event.name %> Summary
+  </h3>
+  
+  <div class="callout panel">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @event.body %>
-</p>
+    <p>
+      <strong>Location:</strong>
+      <%= @event.location %>
+    </p>
 
-<p>
-  <strong>Event ID:</strong>
-  <%= @event.id %>
-</p>
+    <p>
+      <strong>Body:</strong>
+      <%= @event.body %>
+    </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @event.image %>
-</p>
+    <p>
+      <strong>Event ID:</strong>
+      <%= @event.id %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+    <p>
+      <strong>Image:</strong>
+      <%= @event.image %>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= @event.date %>
+    </p>
 
 <!-- <p>
   <strong>User:</strong>
@@ -36,19 +40,23 @@
 </p> -->
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', users_path %>
 
-<h1>Comments</h1>
+</div>
+
+
+<h5>Comments</h5>
 
 <% @event.comments.each do |comment| %>
-  <h3><%= comment.name %></h3>
-  <ul>
-    <li><%= comment.user.username %>: <%= comment.body %></li>
-  </ul>
+<h3><%= comment.name %></h3>
+<ul>
+  <li><%= comment.user.username %>: <%= comment.body %></li>
+</ul>
+
 <% end %>
 
 <%= render 'comments/form', :locals => {:event => @event.id}%>
 
 
-
+</div>
 
