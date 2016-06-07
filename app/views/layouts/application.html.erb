@@ -47,7 +47,7 @@
     <ul class="vertical medium-horizontal menu">
           <% if current_user %>
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-                <li><%= link_to "Users", users_path %></li>
+                <li style="display: <%= is_admin ? "" : "none"; %>"><%= link_to "Users", users_path %></li>
                 <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
                 <% else %>
                 <li><%= link_to "Sign In",   new_user_session_path %></li>
@@ -57,6 +57,13 @@
   </div>
 
 </nav>
+
+
+<div id="pressme">Press me</div>
+
+</header>
+
+<div id="buttonhider">Log In</div>
 
 </header>
 

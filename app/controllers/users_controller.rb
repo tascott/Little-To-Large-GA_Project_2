@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
 
   def show
+    # current_user.update_attribute :admin, true
      @user = User.find(params[:id])
 
      if @user && @user == current_user 
