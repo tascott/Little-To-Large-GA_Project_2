@@ -1,6 +1,7 @@
 <div class="row">
 
 <div id="profilecontainer">
+
   <div class="panel callout medium-2 columns hide-for-small-only" class="panel" id="profile_div">
     <p id="notice"><%= notice %></p>
     <p>
@@ -25,12 +26,13 @@
 
 
 
-  <div class="medium-10 columns">
+  <div class="medium-10 columns" id="eventsholder">
 
     <div class="row">
       <div class="small-12 columns">
         <%= render partial: "layouts/header" %>
       </div>
+      <h2 id="eventsheader">My Events</h2>
     </div>
 
 
@@ -42,27 +44,26 @@
     <div class="panel callout ind_event">
       <div class="row linetop">
 
-        <div class="small-6 columns">
-          <ul><li><%= event.name %></li></ul>
+        <div class="small-12 columns">
+          <ul><li><b><%= event.name %></b> on <b><%= event.date %></b></li></ul>
         </div>
-        <div class="small-6 columns">
-          <ul><li><%= event.location %></li></ul>
-        </div>
+
       </div>
 
 
 
       <div class="row">
         <div class="small-12 columns">
-          <ul><li><%= event.body %></li></ul>
+          <ul><li><b>Event Details:</b> <%= event.body %></li></ul>
         </div>
       </div>
 
 
 
       <div class="row linebottom">
+        
         <div class="small-6 columns">
-          <ul><li><%= event.date %></li></ul>
+          <ul><li><b>Location: </b><%= event.location %></li></ul>
         </div>
 
         <div class="small-6 columns">

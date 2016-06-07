@@ -1,15 +1,20 @@
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
+//= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
-
-window.onload=function(){
-
-alert("hello")
 
 
-}
+  $(document).ready(function(){
+    
+        $('.login-container').addClass("none");
+
+        $('.sign_in').click(function() {
+          $('.login-container').slideToggle();
+
+     });
+
+});
+
 

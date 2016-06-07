@@ -9,9 +9,14 @@
 // }
 
 body {
-
+  height: 100%;
   padding-bottom: 100px;
 }
+
+html {
+  height: 100%;
+}
+
 #logoimg {
   display: block;
   margin: 0 auto;
@@ -21,13 +26,21 @@ body {
   text-align: center;
 }
 
+#profile_container {
+  background-color: blue;
+}
+
 
 #footer {
-  background-color: #FF8C8C;
+  background-color: #728CB0 ;
   // position: fixed;
   // bottom: 0px;
   width: 100%;
   height: auto;
+  padding: 8px;
+  img {
+    padding: 10px;
+  }
 }
 
 #frontbanner {
@@ -59,10 +72,10 @@ body {
 
 #profile_div {
   text-align: center;
-  min-height: 600px;
-  height: auto !important;
-  height: 600px;
+  min-height: 100%;
+  margin-top: 20px;
 }
+
 
 .ind_event {
   border:1px solid black;
@@ -92,5 +105,13 @@ body {
   width: 80%;
   margin: 0 auto;
   float: clear;
+}
+
+#eventsheader {
+  text-align: center;
+}
+
+#eventsholder li {
+  list-style: none;
 }
 
