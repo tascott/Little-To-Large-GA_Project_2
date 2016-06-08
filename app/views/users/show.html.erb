@@ -1,41 +1,23 @@
-<div class="row">
+<div id="eventsholder">
+  <div class="row">
 
-
-
-
-
-  <div class="medium-12 columns" id="eventsholder">
-    <div class="row">
-      <div class="small-12 columns">
-        <%= render partial: "layouts/header" %>
-      </div>
-      <h2 id="eventsheader">My Events</h2>
+    <div class="small-6 centered small-offset-3 columns">
+      <%= render partial: "layouts/header" %>
     </div>
 
+    <div class="small-3 columns nomobile" id="profilecontainer">
+      <p><%= @user.username %></p>
+      <%= link_to image_tag(@user.profile_photo.thumb.url), @user.profile_photo.url %></br>
+      <%= link_to 'Edit Profile', edit_user_registration_path(current_user) %>
+    </div>
+
+  </div>
+
+  <div class="row">
     <div class="small-12 columns">
-  <table>
-  
-
-    <tr class="eventtable">
-      <th>Name</th>
-      <th>Date</th>
-      <th class="nomobile">Location</th>
-      <th class="nomobile">Description</th>
-      <th class="nomobile">Calendar</th>
-    </tr>
-
-    <% @user.events.each do |event| %>
-    <tr class="eventtable">
-      <td><%= event.name %> <%= link_to '(See More)', event, :method => :get %></td>
-      <td><%= event.date %></td>
-      <td class="nomobile"><%= event.location %></td>
-      <td class="nomobile"><%= event.body %></td>
-      <td class="nomobile"><%= link_to 'Add to iCal',iCal_path(event) , :format => :ics %></td>
-    </tr>
-
-    <% end %>
-
-  </table>
+      <h2 id="eventsheader">My Events</h2>
+      <p id="notice"><%= notice %></p>
+    </div>
   </div>
 
 
@@ -43,10 +25,35 @@
 
 
 
-  </div><!-- events div ten cols -->
+  <div class="row">
+    <div class="small-12 columns">
+      <table>
 
-</div><!-- outercontainer -->
 
+        <tr class="eventtable">
+          <th>Name</th>
+          <th>Date</th>
+          <th class="nomobile">Location</th>
+          <th class="nomobile">Description</th>
+          <th class="nomobile">Calendar</th>
+        </tr>
+
+        <% @user.events.each do |event| %>
+        <tr class="eventtable">
+          <td><%= event.name %> <%= link_to '(See More)', event, :method => :get %></td>
+          <td><%= event.date %></td>
+          <td class="nomobile"><%= event.location %></td>
+          <td class="nomobile"><%= event.body %></td>
+          <td class="nomobile"><%= link_to 'Add to iCal',iCal_path(event) , :format => :ics %></td>
+        </tr>
+
+        <% end %>
+
+      </table>
+    </div>
+  </div>
+
+</div>
 
 
 

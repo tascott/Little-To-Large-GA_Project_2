@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'icalendar'
 gem 'carrierwave', '0.10.0'
-
+gem 'rmagick'
 gem 'devise'
 
 gem 'foundation-rails'
