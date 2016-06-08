@@ -21,7 +21,31 @@ class EventsController < ApplicationController
     
     @comment = Comment.new
     @comment.event = @event
+
   end
+
+
+
+
+  
+  def iCal
+   
+     @event = Event.find(params[:id])
+     
+     cal = Icalendar::Calendar.new
+     cal.event do |e|
+       e.dtstart     = Icalendar::Values::Date.new(@event.date)
+       e.summary     = "#{@event.name} #{@event.body}"
+       e.ip_class    = "PRIVATE"
+     end
+
+    cal.publish
+    render text: cal.to_ical, content_type: 'text/calendar'
+     
+  end
+
+
+
 
   # GET /events/new
   def new

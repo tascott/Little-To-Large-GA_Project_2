@@ -29,7 +29,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
 
-  
+    CommentNotifier.send_comment_email(current_user).deliver
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment.event, notice: 'Comment was successfully created.' }

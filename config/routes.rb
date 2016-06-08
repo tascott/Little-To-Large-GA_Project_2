@@ -12,4 +12,8 @@ Rails.application.routes.draw do
 
   resources :events
   
+  
+  get 'events/:id/iCal', to: "events#iCal", as: "iCal"
+
+
 end

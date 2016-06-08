@@ -28,6 +28,15 @@ body {
   
 }
 
+.eventtable {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  tr {
+    border-top: 1px solid black;
+  }
+}
+
 
 
 .panel {
@@ -87,10 +96,16 @@ body {
 
 
 
-                              #new_user_form {
-                                text-align: center;
-                              }
+#new_user_form {
+  text-align: center;
+}
 
 
+@media screen and (max-width: 600px) {
+  .nomobile {
+    visibility: hidden;
+    display: none;
+  }
+}
                               
 
