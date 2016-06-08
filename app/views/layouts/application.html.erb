@@ -11,6 +11,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+
+
 </head>
 
 <body>
@@ -48,6 +50,7 @@
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
           <li style="display: <%= is_admin ? "" : "none"; %>"><%= link_to "Users", users_path %></li>
           <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
+          <li><%= link_to 'New Event', new_event_path %></li>
           <% else %>
           <li class="sign_in"><a href="#">Sign In</a></li>
           <li><%= link_to "Register", new_user_registration_path %></li>
@@ -71,6 +74,8 @@
 </div>
 
 <script type="text/javascript">$(document).foundation()</script>
+
+
 
 </body>
 </html>

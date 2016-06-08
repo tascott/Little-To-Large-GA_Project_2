@@ -60,16 +60,23 @@ html {
   background-size: cover;
 }
 
+
 #frontbanner2 {
-  height: 400px;
+  height: 300px;
   width: 100%;
+  background: url(/assets/tablecakes.png) no-repeat center center fixed;
   border: 1px solid black;
+  background-size: cover;
 }
 
-#frontbannertext {
+#frontbannertext1 {
   text-align: center;
-  padding-top: 100px;
-  vertical-align: text-top;
+  padding-top: 80px;
+}
+
+#frontbannertext2 {
+  text-align: center;
+  padding-top: 80px;
 }
 
 #frontdetails {
