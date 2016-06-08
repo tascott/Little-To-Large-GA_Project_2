@@ -1,3 +1,47 @@
+<div class="login-container">
+
+  <div class="row">
+
+    <div class="small-12 medium-4 columns">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+    </div>
+
+      <div class="small-12 medium-4 columns">
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+      </div>
+  
+
+
+    <div class="small-12 medium-4 columns">
+      <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+      <% end -%>
+
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+      <% end %>
+
+    </div>
+</div>
+
+</div>
+
+
 <div class="row">
   <div class="small-6 columns small-offset-3">
     <img id="logoimg" src="images/final-logo.png">

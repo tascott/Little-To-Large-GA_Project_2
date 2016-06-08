@@ -8,18 +8,24 @@
 
 // }
 
-body {
-  height: 100%;
-  padding-bottom: 100px;
+html {
+  // font-family: 'Libre Baskerville', serif !important;
+  html, body {
+      height: 91%;
+
+  }
 }
 
-html {
-  height: 100%;
+#new_user_form {
+  text-align: center;
 }
 
 #logoimg {
   display: block;
   margin: 0 auto;
+  max-height: 200px;
+  width: auto;
+
 }
 
 #header_title h4 {
@@ -34,9 +40,10 @@ html {
 #footer {
   background-color: #728CB0 ;
   // position: fixed;
+  // left: 0px;
   // bottom: 0px;
-  width: 100%;
-  height: auto;
+  // width: 100%;
+  // height: 140px;
   padding: 8px;
   img {
     padding: 10px;
@@ -44,7 +51,7 @@ html {
 }
 
 #frontbanner {
-  height: 400px;
+  height: 300px;
   width: 100%;
   background: url(/images/banner1.png) no-repeat center center fixed;
   border: 1px solid black;
@@ -60,6 +67,7 @@ html {
 #frontbannertext {
   text-align: center;
   padding-top: 100px;
+  vertical-align: text-top;
 }
 
 #frontdetails {
@@ -111,7 +119,17 @@ html {
   text-align: center;
 }
 
-#eventsholder li {
-  list-style: none;
+#eventsholder {
+  min-height: 600px;
+  li {
+    list-style: none;
+  }
 }
+
+#welcome {
+  padding-right: 10px;
+}
+
+
+
 

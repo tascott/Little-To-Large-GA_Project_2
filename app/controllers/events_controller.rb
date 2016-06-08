@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     @comment = Comment.new
     # @event = Event.find(params[:id])
 
-    if @event.user == current_user 
+    if (@event.user == current_user) || current_user.admin?  
       render 'show'
     else
       redirect_to root_path

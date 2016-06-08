@@ -15,11 +15,10 @@ class UsersController < ApplicationController
     # current_user.update_attribute :admin, true
      @user = User.find(params[:id])
 
-     if @user && @user == current_user 
+     if (@user && @user == current_user) || current_user.admin? 
        render 'show'
      else
        redirect_to root_path
      end
   end
-
 end
