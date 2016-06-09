@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rails_12factor', group: :production
+
 gem 'icalendar'
 gem 'carrierwave', '0.10.0'
 gem 'rmagick'
