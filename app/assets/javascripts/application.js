@@ -2,6 +2,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require bootstrap
+//= require bootstrap-datepicker
+
 //= require_tree .
 
 var test;

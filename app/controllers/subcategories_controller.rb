@@ -15,9 +15,9 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories/new
   def new
     
-    @event_id = params[:id]
+    @event = Event.find(params[:event_id])
     @subcategory = Subcategory.new
-    @subcategory.event_id = @event_id
+   @subcategory.event = @event
 
   end
 
@@ -29,10 +29,11 @@ class SubcategoriesController < ApplicationController
   # POST /subcategories.json
   def create
     @subcategory = Subcategory.new(subcategory_params)
+    @event = Event.find(params[:event_id])
 
     respond_to do |format|
       if @subcategory.save
-        format.html { redirect_to @subcategory, notice: 'Subcategory was successfully created.' }
+        format.html { redirect_to @event, notice: 'Subcategory was successfully created.' }
         format.json { render :show, status: :created, location: @subcategory }
       else
         format.html { render :new }

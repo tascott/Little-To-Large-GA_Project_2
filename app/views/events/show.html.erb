@@ -6,7 +6,7 @@
     <%= @event.name %> Summary
   </h3>
   
-  <div class="small-12 medium-10 medium-offset-2 columns callout panel">
+  <div class="small-12 columns callout panel">
     <p id="notice"><%= notice %></p>
 
     <p>
@@ -15,7 +15,7 @@
     </p>
 
     <p>
-      <strong>Body:</strong>
+      <strong>Details:</strong>
       <%= @event.body %>
     </p>
 
@@ -33,10 +33,10 @@
 
 
 <div class="row">
-  <div class="mall-12 medium-10 float-right columns subcatholder callout panel2">
+  <div class="small-12 medium-10 float-right columns subcatholder callout panel2">
     <div id="subcatheader">
       <h4>Subcategories</h4>
-      <%= link_to 'Add New Subcategory', new_subcategory_path %>
+      <%= link_to 'Add New Subcategory', new_event_subcategory_path(@event) %>
     </div>
   </div>
 </div>
@@ -52,7 +52,14 @@
         <h6><%= cat.description %></h6>
       </div>
       <div class="small-6 columns">
-        <h4>Cost: <%= num_to_currency(cat.cost) %>
+        <h4>Cost: 
+
+        <%- if cat.cost %>
+        <%= num_to_currency(cat.cost) %>
+        
+        <% else %>
+        No cost yet!
+        <% end %>
 
         <%- if cat.paid == false %>
         <button class="btn">Pay Now</button>

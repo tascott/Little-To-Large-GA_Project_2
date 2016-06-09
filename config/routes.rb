@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
 
-  resources :subcategories
+
   resources :comments
   devise_for :users
 
@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
   # get 'events/:id/comments/new', to: 'comments#new', :as => "new_comment_with_event"
 
-  resources :events
+  resources :events do 
+
+    resources :subcategories
+  end
   
   
   get 'events/:id/iCal', to: "events#iCal", as: "iCal"

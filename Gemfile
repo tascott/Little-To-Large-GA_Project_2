@@ -4,7 +4,7 @@ gem 'icalendar'
 gem 'carrierwave', '0.10.0'
 gem 'rmagick'
 gem 'devise'
-
+gem 'bootstrap-datepicker-rails'
 gem 'foundation-rails'
 
 gem 'bootstrap-sass'
