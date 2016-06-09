@@ -6,7 +6,7 @@
     <%= @event.name %> Summary
   </h3>
   
-  <div class="callout panel">
+  <div class="small-12 medium-10 medium-offset-2 columns callout panel">
     <p id="notice"><%= notice %></p>
 
     <p>
@@ -19,15 +19,6 @@
       <%= @event.body %>
     </p>
 
-    <p>
-      <strong>Event ID:</strong>
-      <%= @event.id %>
-    </p>
-
-    <p>
-      <strong>Image:</strong>
-      <%= @event.image %>
-    </p>
 
     <p>
       <strong>Date:</strong>
@@ -41,9 +32,14 @@
 </div>
 
 
-
-
-
+<div class="row">
+  <div class="mall-12 medium-10 float-right columns subcatholder callout panel2">
+    <div id="subcatheader">
+      <h4>Subcategories</h4>
+      <%= link_to 'Add New Subcategory', new_subcategory_path %>
+    </div>
+  </div>
+</div>
 
 
 
@@ -51,32 +47,24 @@
 <div class="row">
   <div class="small-12 medium-10 float-right columns subcatholder callout panel2">
     <div class="row">
-      <div class="small-12 columns">
+      <div class="small-6 columns border-right-sub">
         <h3><%= cat.name %></h3>
         <h6><%= cat.description %></h6>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="small-12 columns">
-        <h5>Cost: <%= num_to_currency(cat.cost) %></h5>
+      <div class="small-6 columns">
+        <h4>Cost: <%= num_to_currency(cat.cost) %>
 
         <%- if cat.paid == false %>
-        <%= button_to "Pay Now", new_password_path(resource_name), class: 'btn' %>
-        <% end -%>
-
-
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
+        <button class="btn">Pay Now</button>
+        <% else %>
+        <button class="btn">See Invoice</button>
+        <% end %>
+        </h4>
 
       </div>
     </div>
+
+
 
 
   </div>
@@ -87,10 +75,11 @@
 </br>
 
 
+<div id="comment_holder">
 <h5>Comments</h5>
 
 <% @event.comments.each do |comment| %>
-<!-- <h3><%= comment.name %></h3> -->
+
 <ul>
   <li><%= comment.user.username %>: <%= comment.body %></li>
 </ul>
@@ -99,6 +88,6 @@
 
 <%= render 'comments/form', :locals => {:event => @event.id}%>
 
-
+</div>
 </div>
 

@@ -1,3 +1,83 @@
 <%= render partial: "layouts/header2" %>
 
-<h1>FAQ</h1>
+<div class="aboutus">
+
+<h1 id="faqheader">FAQ</h1>
+<h5>Click to reveal</h5>
+
+
+
+<div class="faq_container">
+
+</br>
+
+<div class="faq">
+   <div class="faq_question">What services do you provide?</div>
+        <div class="faq_answer_container">
+           <div class="faq_answer">Party decorations, venue arrangements, food, and more.</div>
+        </div>        
+</div>
+</br></br></br>
+   <div class="faq">
+      <div class="faq_question">Are you a limited company?</div>
+           <div class="faq_answer_container">
+              <div class="faq_answer">Yes</div>
+           </div>        
+    </div>
+
+    </br></br></br>
+
+    <div class="faq">
+       <div class="faq_question">When were you formed?</div>
+            <div class="faq_answer_container">
+               <div class="faq_answer">2016</div>
+            </div>        
+    </div>
+
+    </br></br></br>
+
+    <div class="faq">
+       <div class="faq_question">Can I pay online?</div>
+            <div class="faq_answer_container">
+               <div class="faq_answer">Not yet, but this functionality is coming soon!</div>
+            </div>        
+    </div>
+
+    </br></br></br>
+
+    <div class="faq">
+       <div class="faq_question">What are your contact details?</div>
+            <div class="faq_answer_container">
+               <div class="faq_answer">All our details are at the bottom of the page, otherwise, make an event and comment on it and we will reply.</div>
+            </div>        
+    </div>
+
+
+
+
+
+
+
+ </div>
+
+</div>
+
+<script>
+ $(document).ready(function() {
+ 
+    $('.faq_question').click(function() {
+ 
+        if ($(this).parent().is('.open')){
+            $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
+            $(this).closest('.faq').removeClass('open');
+ 
+            }else{
+                var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
+                $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
+                $(this).closest('.faq').addClass('open');
+            }
+ 
+    });
+ 
+});
+</script>

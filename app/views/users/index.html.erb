@@ -1,22 +1,30 @@
 <%= render partial: "layouts/header" %>
 
 
-<p id="notice"><%= notice %></p>
 
+  <div class="row">
+    <div class="small-12 columns">
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID</th>
 
+        </tr>
 
-<% if current_user.admin? %>
-  
+        <% @users.each do |user| %>
+        <tr class="eventtable">
+          <td><%= user.username %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.id %></td>
+        </tr>
 
+        <% end %>
 
-<% @users.each do |user| %>
-  <ul>
-    <li><%= user.username %></li>
-    <li><%= user.first_name %></li>
-    <li><%= user.last_name %></li>
-    <li><%= user.id %></li>
-    <li><%= image_tag user.profile_photo.url %></li>
-  </ul>
-<% end %>
+      </table>
+    </div>
+  </div>
 
-<% end %>
+</div>

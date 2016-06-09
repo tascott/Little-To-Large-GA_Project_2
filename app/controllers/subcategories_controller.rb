@@ -14,6 +14,7 @@ class SubcategoriesController < ApplicationController
 
   # GET /subcategories/new
   def new
+    
     @event_id = params[:id]
     @subcategory = Subcategory.new
     @subcategory.event_id = @event_id

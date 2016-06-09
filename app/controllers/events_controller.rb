@@ -7,12 +7,11 @@ class EventsController < ApplicationController
 
     user = current_user
 
-    if (@event.user == current_user) || current_user.admin?  
-      render 'show'
+    if current_user.admin?  
+      render 'index'
     else
       redirect_to root_path
     end
-
 
    end
 
