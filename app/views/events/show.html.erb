@@ -40,22 +40,51 @@
 
 </div>
 
-  <strong>Categories</strong>
-  <% @event.subcategories.each do |cat| %>
 
-  <ul>
-    <li><%= cat.name %></li>
-    <li><%= cat.description %></li>
-    <li><%= cat.cost %></li>
-    <li><%= cat.paid.to_s %></li>
-  </ul>
 
+
+
+
+
+
+<% @event.subcategories.each do |cat| %>
+<div class="row">
+  <div class="small-12 medium-10 float-right columns subcatholder callout panel2">
+    <div class="row">
+      <div class="small-12 columns">
+        <h3><%= cat.name %></h3>
+        <h6><%= cat.description %></h6>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <h5>Cost: <%= num_to_currency(cat.cost) %></h5>
+
+        <%- if cat.paid == false %>
+        <%= button_to "Pay Now", new_password_path(resource_name), class: 'btn' %>
+        <% end -%>
+
+
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
 
 <% end %>
 
-
-
-
+</br>
 
 
 <h5>Comments</h5>

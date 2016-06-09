@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1/edit
-  def edit
+  def edit 
   end
 
   # POST /comments
