@@ -34,15 +34,28 @@
       <%= @event.date %>
     </p>
 
-<!-- <p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p> -->
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', users_path %>
 
 </div>
+
+  <strong>Categories</strong>
+  <% @event.subcategories.each do |cat| %>
+
+  <ul>
+    <li><%= cat.name %></li>
+    <li><%= cat.description %></li>
+    <li><%= cat.cost %></li>
+    <li><%= cat.paid.to_s %></li>
+  </ul>
+
+
+<% end %>
+
+
+
+
 
 
 <h5>Comments</h5>
