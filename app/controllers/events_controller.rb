@@ -4,13 +4,28 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-  end
+
+    user = current_user
+
+    if (@event.user == current_user) || current_user.admin?  
+      render 'show'
+    else
+      redirect_to root_path
+    end
+
+
+   end
+
+
+
+
 
   # GET /events/1
   # GET /events/1.json
   def show
     @comment = Comment.new
-    # @event = Event.find(params[:id])
+
+    @event = Event.find(params[:id])
 
     if (@event.user == current_user) || current_user.admin?  
       render 'show'

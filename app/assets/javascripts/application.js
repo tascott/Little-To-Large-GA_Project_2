@@ -4,15 +4,16 @@
 //= require foundation
 //= require_tree .
 
+var test;
 
-
-$(document).ready(function(){
+$(document).on("ready page:load" , function(){
   
+  console.log($('.login-container'));
+  test = $('.login-container');
   $('.login-container').addClass("none");
 
   $('.sign_in').click(function() {
     $('.login-container').slideToggle();
-
   });
 
 

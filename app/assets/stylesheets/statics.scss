@@ -45,7 +45,7 @@ html {
   // left: 0px;
   // bottom: 0px;
   // width: 100%;
-  // height: 140px;
+  // height: 140px; 
   padding: 8px;
   img {
     padding: 10px;
@@ -140,6 +140,12 @@ html {
   padding-right: 10px;
 }
 
+table { 
+  border-collapse:collapse;
+  width: 100%;
+}
+td, th {
+  padding: 17px;
 
-
+} 
 

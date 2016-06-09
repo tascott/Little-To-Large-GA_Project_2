@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   get 'users/:id', to: 'users#show'
 
+  get 'statics/faq'
+  get 'statics/aboutus'
+
   # get 'events/:id/comments/new', to: 'comments#new', :as => "new_comment_with_event"
 
   resources :events
