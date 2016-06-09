@@ -1,3 +1,5 @@
+<div class="outerform">
+
 <%= form_for([@event, @subcategory]) do |f| %>
   <% if @subcategory.errors.any? %>
     <div id="error_explanation">
@@ -28,3 +30,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>

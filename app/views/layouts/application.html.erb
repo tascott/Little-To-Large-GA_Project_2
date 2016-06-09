@@ -3,7 +3,8 @@
 <head>
   <title>Little To Large</title>
   <!-- <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title> -->
-  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -51,7 +52,7 @@
           <% if current_user %>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
           <li style="display: <%= is_admin ? "" : "none"; %>"><%= link_to "Users", users_path %></li>
-          <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
+          <li><a href="/users/<%= current_user.id %>">My Events</a></li>
           <li><%= link_to 'New Event', new_event_path %></li>
           <% else %>
           <li class="sign_in"><a href="#">Sign In</a></li>
