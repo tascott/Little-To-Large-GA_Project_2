@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
     user = current_user
 
-    if current_user.admin?  
+    if current_user && current_user.admin?  
       render 'index'
     else
       redirect_to root_path

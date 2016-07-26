@@ -8,7 +8,7 @@ gem 'rmagick'
 gem 'devise'
 gem 'bootstrap-datepicker-rails'
 gem 'foundation-rails'
-
+gem 'fog', '1.36.0'
 gem 'bootstrap-sass'
 gem 'rails', '4.2.6'
 
