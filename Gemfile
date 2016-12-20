@@ -7,10 +7,14 @@ gem 'carrierwave', '0.10.0'
 gem 'rmagick'
 gem 'devise'
 gem 'bootstrap-datepicker-rails'
-gem 'foundation-rails'
+gem "foundation-rails", "6.3.0.0"
 gem 'fog', '1.36.0'
 gem 'bootstrap-sass'
 gem 'rails', '4.2.6'
+
+gem "figaro"
+
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'pg', '~> 0.15'
 
